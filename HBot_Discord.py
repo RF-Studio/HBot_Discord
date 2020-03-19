@@ -92,4 +92,4 @@ async def rnd(ctx):
     await ctx.send('Random\n')
     await ctx.send(rndb())
 
-client.run('Njg5OTMxNDg1NjkxNzcyOTUw.XnKC3Q.zZrvVlCYJgamrMtQfRk6X2WjnRE')
+client.run('YOUR TOKEN')
