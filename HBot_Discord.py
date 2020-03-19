@@ -107,6 +107,7 @@ async def rnd(ctx):
     await ctx.send('Random\n')
     await ctx.send(rndb())
 
+<<<<<<< HEAD
 @client.command()
 async def meme(ctx):
     await ctx.send('Mème !\n')
@@ -128,4 +129,6 @@ async def help(ctx):
 
 
 #----------------------RUN----------------------
+=======
+>>>>>>> 27a66a84df4c1964228dc188d8cfa8e8feefbf4c
 client.run('YOUR TOKEN')
