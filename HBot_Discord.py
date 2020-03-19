@@ -3,6 +3,8 @@ from discord.ext import commands
 
 client = commands.Bot(command_prefix ='H.')
 
+
+#----------------------4CHAN IMAGE ALGORITHM----------------------
 #List of 4chan boards, and dict to act as a cache for already looked up board catalogs
 boards = ['a','c','w','m','cgl','cm','n','jp','vp','v','vg','vr','co','g','tv','k','o','an','tg','sp','asp','sci','int','out','toy','biz','i','po','p','ck','ic','wg','mu','fa','3','gd','diy','wsg','s','hc','h','e','u','d','y','t','hr','gif','trv','fit','x','lit','adv','lgbt','mlp','b','r','r9k','pol','soc','s4s']
 cache  = {cache: '' for cache in boards}
@@ -49,7 +51,7 @@ def r4chan(board):
     thread = 'http://boards.4chan.org/' + board + '/thread/' + str(thread)
     return [ imageurl , thread ]
 
-#Opens x amount of image URLs in web browser; printing a link to the parent threads in console for reference
+#----------------------FUNCTIONS----------------------
 def ecchi():
     url = r4chan('e')
     return url[0]
@@ -67,11 +69,24 @@ def rndb():
     url = r4chan(random.choice(b))
     return url[0]
 
+def m():
+    url = r4chan('sci')
+    return url[0]
 
+def auto():
+    url = r4chan('o')
+    return url[0]
+
+def p():
+    url = r4chan('mlp')
+    return url[0]
+
+#----------------------EVENT----------------------
 @client.event
 async def on_ready():
     print('Bot is ready...')
 
+#----------------------COMMANDS----------------------
 @client.command()
 async def e(ctx):
     await ctx.send('Ecchi !\n')
@@ -92,4 +107,25 @@ async def rnd(ctx):
     await ctx.send('Random\n')
     await ctx.send(rndb())
 
-client.run('Njg5OTMxNDg1NjkxNzcyOTUw.XnKC3Q.zZrvVlCYJgamrMtQfRk6X2WjnRE')
+@client.command()
+async def meme(ctx):
+    await ctx.send('Mème !\n')
+    await ctx.send(m())
+
+@client.command()
+async def car(ctx):
+    await ctx.send('BAGNOOOLLLE !\n')
+    await ctx.send(auto())
+
+@client.command()
+async def poney(ctx):
+    await ctx.send('MY LITTLE PONEY !\n MY LITTLE PONEEEYYYYY\n')
+    await ctx.send(p())
+
+@client.command()
+async def help(ctx):
+    await ctx.send("Préfixe commande : H.\nListe des commandes :\n   - meme : renvoie une photo du board sci\n   - car : renvoie une photo du board o\n   - poney : renvoie une photo du board mlp\n\nIl a d'autres commandes que vous laisse découvrir ou demander au Patron ! Mais attention elles sont dangeureuses...")
+
+
+#----------------------RUN----------------------
+client.run('YOUR TOKEN')
