@@ -107,7 +107,6 @@ async def rnd(ctx):
     await ctx.send('Random\n')
     await ctx.send(rndb())
 
-<<<<<<< HEAD
 @client.command()
 async def meme(ctx):
     await ctx.send('Mème !\n')
@@ -123,12 +122,10 @@ async def poney(ctx):
     await ctx.send('MY LITTLE PONEY !\n MY LITTLE PONEEEYYYYY\n')
     await ctx.send(p())
 
-@client.command()
-async def help(ctx):
+@client.command(alaises = ['help'])
+async def helpp(ctx):
     await ctx.send("Préfixe commande : H.\nListe des commandes :\n   - meme : renvoie une photo du board sci\n   - car : renvoie une photo du board o\n   - poney : renvoie une photo du board mlp\n\nIl a d'autres commandes que vous laisse découvrir ou demander au Patron ! Mais attention elles sont dangeureuses...")
 
 
 #----------------------RUN----------------------
-=======
->>>>>>> 27a66a84df4c1964228dc188d8cfa8e8feefbf4c
 client.run('YOUR TOKEN')
